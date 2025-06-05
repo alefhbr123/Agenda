@@ -1,5 +1,7 @@
 const { connect } = require("./db");
+const { ObjectId } = require("mongodb")
 const Logger = require("./logger");
+
 
 module.exports = class Evento {
     constructor(
@@ -19,8 +21,8 @@ module.exports = class Evento {
         this.horaInicio = horaInicio;
         this.horaFim = horaFim;
         this.local = local;
-        this.categoriaId = categoriaId;
-        this.usuarioId = usuarioId;
+        this.categoriaId = new ObjectId(String(categoriaId));
+        this.usuarioId = new ObjectId(String(usuarioId));
         this.convidados = convidados;
     }
 

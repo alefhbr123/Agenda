@@ -1,10 +1,11 @@
 // Convidado.js
 const { connect } = require("./db");
+const { ObjectId } = require("mongodb");
 const Logger = require("./logger"); 
 
 module.exports = class Convidado {
     constructor(evento_id, nome, email, status) {
-        this.evento_id = evento_id;
+        this.evento_id = new ObjectId(String(evento_id));
         this.nome = nome;
         this.email = email;
         this.status = status;
