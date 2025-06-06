@@ -64,6 +64,7 @@ async function testarInsercaoConvidado(evento_id) {
     await convidado.inserir();
 }
 
+// Teste pra inserir os dados no banco de dados
 async function testarInsercao(){
     await testarInsercaoUsuario();
     await testarInsercaoCategoria();
@@ -85,6 +86,7 @@ async function testarInsercao(){
     }
 }
 
+// Tste busca os eventos do usuário
 async function testarbuscarEventosUsuario(){
     // Pegar o ObjectId do usuário
     let user = await Usuario.buscar({nome: "usuario1"});
