@@ -73,7 +73,7 @@ async function testarInsercao(){
     let user = await Usuario.buscar({nome: "usuario1"});
     let categoria = await Categoria.buscar({nome: "Trabalho"});
 
-    // Insere 2 evento com as referencias usuario_id e categoria_id do resultado das buscas anteriores
+    // Insere 2 eventos com as referencias usuario_id e categoria_id do resultado das buscas anteriores
     await testarInsercaoEvento(categoria[0]._id, user[0]._id);
     console.log("categoria_id: ", categoria[0]._id, " - usuario_id: ", user[0]._id);
 
@@ -86,17 +86,7 @@ async function testarInsercao(){
     }
 }
 
-// Tste busca os eventos do usuário
-async function testarbuscarEventosUsuario(){
-    // Pegar o ObjectId do usuário
-    let user = await Usuario.buscar({nome: "usuario1"});
-    let user_id = user[0]._id;
-    
-    // busca eventos pelo id do usuário
-    await Evento.buscar({usuario_id: user_id});
-}
+//testarInsercao();
 
-testarInsercao();
-//testarbuscarEventosUsuario();
-
-
+//Usuario.atualizar({nome: "usuario1"}, {email: "usuario123@gmail.com"});
+//Evento.buscar({usuario_id: new ObjectId("id do usuário1")});
